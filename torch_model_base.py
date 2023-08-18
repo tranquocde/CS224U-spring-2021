@@ -328,7 +328,7 @@ class TorchModelBase:
 
         # Graph:
         if not self.warm_start or not hasattr(self, "model"):
-            self.model = self.build_graph()
+            self.model = self.build_graph() #building the model with architecture
             # This device move has to happen before the optimizer is built:
             # https://pytorch.org/docs/master/optim.html#constructing-it
             self.model.to(self.device)
